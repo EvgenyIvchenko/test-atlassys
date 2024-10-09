@@ -14,11 +14,9 @@ html(class="page" lang="ru")
 		link(rel="manifest" href="favicon/site.webmanifest")
 		block meta
 		block head
-			link(rel="preload" href="fonts/montserrat-400.woff2" as="font" crossorigin="anonymous")
-			link(rel="preload" href="fonts/montserrat-600.woff2" as="font" crossorigin="anonymous")
-			link(rel="preload" href="fonts/montserrat-700.woff2" as="font" crossorigin="anonymous")
-			link(rel="preload" href="fonts/mulish-600.woff2" as="font" crossorigin="anonymous")
-			link(rel="preload" href="fonts/mulish-700.woff2" as="font" crossorigin="anonymous")
+			link(rel="preload" href="fonts/inter-400.woff2" as="font" crossorigin="anonymous")
+			link(rel="preload" href="fonts/inter-500.woff2" as="font" crossorigin="anonymous")
+			link(rel="preload" href="fonts/inter-600.woff2" as="font" crossorigin="anonymous")
 			link(rel="stylesheet" href="css/style.min.css")
 	body(class="page__body")
 		include ../data/data
@@ -31,4 +29,3 @@ html(class="page" lang="ru")
 			include ../includes/footer
 		block page-bottom
 			script(src="js/bundle.min.js")
-			script(src="js/switcher.js")

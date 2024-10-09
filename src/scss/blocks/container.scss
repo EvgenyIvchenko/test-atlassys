@@ -1,1 +1,11 @@
-.container {}
+.container {
+	margin: 0 auto;
+	padding-right: 25px;
+	padding-left: 25px;
+	width: 100%;
+
+	@include tablet {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}

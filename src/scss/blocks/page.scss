@@ -1,9 +1,14 @@
 .page__body {
-	display: flex;
-	flex-direction: column;
+	display: grid;
 	overflow-anchor: none;
 	margin: 0;
+	min-width: 375px;
 	min-height: 100dvh;
+	font-family: var(--font-family);
+	font-weight: 400;
 	font-feature-settings: "pnum" on, "lnum" on;
+	font-size: 13px;
+	color: var(--color-text-main);
+	background-color: var(--color-bg-main);
 	overscroll-behavior: none;
 }

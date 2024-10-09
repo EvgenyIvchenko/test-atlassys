@@ -1,1 +1,22 @@
 header.header
+	div.header__container.container
+		div.header__menu.menu
+			if isHomePage
+				div.menu__logo
+					img(src="./img/content/logo-menu.svg" width="183" height="36" alt="Логотип банка")
+			else
+				a.menu__logo(href="#!")
+					img(src="./img/content/logo-menu.svg" width="183" height="36" alt="Логотип банка")
+			button.menu__burger-button(type="button" aria-expanded="false" aria-label="Меню")
+				span
+				span
+				span
+		div.header__account-panel.account-panel
+			h1.account-panel__heading Setting
+			button.account-panel__settings(type="button")
+			button.account-panel__notification(type="button")
+			div.account-panel__user-avatar
+			form.account-panel__search(action="#" method="get")
+				div.account-panel__search-icon
+					+icon(16, 16, 'search-icon')
+				input.account-panel__search-field(id="search-form" name="search" placeholder="Search for something")
