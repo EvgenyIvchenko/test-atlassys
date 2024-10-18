@@ -1,0 +1,34 @@
+.sidebar {
+	position: absolute;
+	top: 140px;
+	bottom: 0;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-bg-main);
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+	pointer-events: none;
+
+	&.sidebar--opened {
+		opacity: 1;
+		pointer-events: visible;
+	}
+
+	@include desktop {
+		position: static;
+		grid-area: sidebar;
+		border: 1px solid var(--color-aside-border);
+		width: auto;
+		height: auto;
+		opacity: 1;
+		pointer-events: visible;
+	}
+}
+
+.sidebar__navigation {
+	display: flex;
+	flex-direction: column;
+}

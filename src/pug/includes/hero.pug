@@ -1,0 +1,51 @@
+section.hero
+	div.hero__container.container
+		div.hero__tabs.tabs
+			ul.tabs__title-list
+				li.tabs__title-item.tabs__title-item--current(data-tab="tab-1")
+					h2.tabs__title-heading Edit Profile
+				li.tabs__title-item(data-tab="tab-2")
+					h2.tabs__title-heading Preferences
+				li.tabs__title-item(data-tab="tab-3")
+					h2.tabs__title-heading Security
+			ul.tabs__content-list
+				li.tabs__content-item.tabs__content-item--visible(id="tab-1")
+					form.tabs__edit-profile.edit-profile(action="#" method="post" enctype="multipart/formdata" autocomplete="off")
+						div.edit-profile__avatar-wrap
+							div.edit-profile__avatar-preview
+								picture
+									source(srcset="img/content/user-avatar.webp" type="image/webp")
+									img(src="img/content/user-avatar.png" width="170" height="170" alt="User avatar")
+							div.edit-profile__upload-wrap
+								input.edit-profile__upload-field(type="file" id="avatar" name="avatar")
+								label.edit-profile__upload-dropzone(for="avatar")
+						ul.edit-profile__field-list
+							li.edit-profile__field-item
+								label.edit-profile__title(for="name") Your Name
+								input.edit-profile__field(id="name" type="text" name="name" placeholder="Charlene Reed")
+							li.edit-profile__field-item
+								label.edit-profile__title(for="user-name") User Name
+								input.edit-profile__field(id="user-name" type="text" name="user-name" placeholder="Charlene Reed")
+							li.edit-profile__field-item
+								label.edit-profile__title(for="email") Email
+								input.edit-profile__field(id="email" type="email" name="email" placeholder="charlenereed@gmail.com")
+							li.edit-profile__field-item
+								label.edit-profile__title(for="password") Password
+								input.edit-profile__field(id="password" type="password" name="password" placeholder="**********")
+							li.edit-profile__field-item
+								label.edit-profile__title(for="present-address") Present Address
+								input.edit-profile__field(id="present-address" type="text" name="present-address" placeholder="San Jose, California, USA")
+							li.edit-profile__field-item
+								label.edit-profile__title(for="permanent-address") Permanent Address
+								input.edit-profile__field(id="permanent-address" type="text" name="permanent-address" placeholder="San Jose, California, USA")
+							li.edit-profile__field-item
+								label.edit-profile__title(for="city") City
+								input.edit-profile__field(id="city" type="text" name="city" placeholder="San Jose")
+							li.edit-profile__field-item
+								label.edit-profile__title(for="country") Country
+								input.edit-profile__field(id="country" type="text" name="country" placeholder="USA")
+						button.edit-profile__submit(type="submit") Save
+				li.tabs__content-item(id="tab-2")
+					|content-2
+				li.tabs__content-item(id="tab-3")
+					|content-3

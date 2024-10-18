@@ -1,11 +1,9 @@
 .container {
 	margin: 0 auto;
-	padding-right: 25px;
-	padding-left: 25px;
 	width: 100%;
+	padding-inline: 20px;
 
-	@include tablet {
-		padding-right: 0;
-		padding-left: 0;
+	@include desktop {
+		padding-inline: 30px;
 	}
 }

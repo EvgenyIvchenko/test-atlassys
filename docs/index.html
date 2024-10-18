@@ -21,28 +21,150 @@
   <body class="page__body">
     <header class="header">
       <div class="header__container container">
-        <div class="header__menu menu"><a class="menu__logo" href="#!"><img src="./img/content/logo-menu.svg" width="183" height="36" alt="Логотип банка"></a>
-          <button class="header__menu-open" type="button" aria-expanded="false" aria-label="Меню"><span></span><span></span><span></span></button>
-        </div>
-        <div class="header__account-panel account-panel">
-          <h1 class="account-panel__heading">Setting</h1>
-          <button class="account-panel__settings" type="button"></button>
-          <button class="account-panel__notification" type="button"></button>
-          <div class="account-panel__user-avatar"></div>
-          <form class="account-panel__search" action="#" method="get">
-            <div class="account-panel__search-icon">
+        <button class="header__burger" type="button" aria-expanded="false" aria-label="Меню"><span></span><span></span><span></span></button>
+        <h1 class="header__heading">Setting</h1>
+        <search class="header__search-wrap">
+          <form class="header__search-form" action="#" method="get" autocomplete="off">
+            <button class="header__search-submit">
                   <svg width="16" height="16" aria-hidden="true">
                     <use xlink:href="img/sprite.svg#search-icon"></use>
                   </svg>
-            </div>
-            <input class="account-panel__search-field" id="search-form" name="search" placeholder="Search for something">
+            </button>
+            <input class="header__search" type="search" id="search" name="search" placeholder="Search for something">
           </form>
+        </search>
+        <button class="header__settings button--secondary" type="button">
+              <svg width="26" height="26" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#menu-settings"></use>
+              </svg>
+        </button>
+        <button class="header__notifications button--secondary" type="button">
+              <svg width="26" height="26" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#menu-notifications"></use>
+              </svg>
+        </button>
+        <div class="header__user-avatar">
+          <picture>
+            <source srcset="img/content/user-avatar.webp" type="image/webp"><img src="img/content/user-avatar.png" width="35" height="35" alt="User avatar">
+          </picture>
         </div>
       </div>
     </header>
+    <aside class="sidebar">
+      <div class="sidebar__navigation navigation"><a class="navigation__logo" href="#!"><img src="./img/content/nav-logo.svg" width="183" height="36" alt="Логотип банка"></a>
+        <ul class="navigation__list">
+          <li class="navigation__item"><a class="navigation__link" href="#">
+                  <svg width="25" height="25" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#nav-dashboard"></use>
+                  </svg>Dashboard</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+                  <svg width="25" height="25" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#nav-transactions"></use>
+                  </svg>Transactions</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+                  <svg width="25" height="25" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#nav-accounts"></use>
+                  </svg>Accounts</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+                  <svg width="25" height="25" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#nav-investments"></use>
+                  </svg>Investments</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+                  <svg width="25" height="25" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#nav-cards"></use>
+                  </svg>Credit Cards</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+                  <svg width="25" height="25" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#nav-loans"></use>
+                  </svg>Loans</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+                  <svg width="25" height="25" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#nav-services"></use>
+                  </svg>Services</a></li>
+          <li class="navigation__item"><a class="navigation__link" href="#">
+                  <svg width="25" height="25" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#nav-privileges"></use>
+                  </svg>My Privileges</a></li>
+          <li class="navigation__item navigation__item--current"><a class="navigation__link" href="#">
+                  <svg width="25" height="25" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#nav-setting"></use>
+                  </svg>Setting</a></li>
+        </ul>
+      </div>
+    </aside>
     <main class="main">
+      <section class="hero">
+        <div class="hero__container container">
+          <div class="hero__tabs tabs">
+            <ul class="tabs__title-list">
+              <li class="tabs__title-item tabs__title-item--current" data-tab="tab-1">
+                <h2 class="tabs__title-heading">Edit Profile</h2>
+              </li>
+              <li class="tabs__title-item" data-tab="tab-2">
+                <h2 class="tabs__title-heading">Preferences</h2>
+              </li>
+              <li class="tabs__title-item" data-tab="tab-3">
+                <h2 class="tabs__title-heading">Security</h2>
+              </li>
+            </ul>
+            <ul class="tabs__content-list">
+              <li class="tabs__content-item tabs__content-item--visible" id="tab-1">
+                <form class="tabs__edit-profile edit-profile" action="#" method="post" enctype="multipart/formdata" autocomplete="off">
+                  <div class="edit-profile__avatar-wrap">
+                    <div class="edit-profile__avatar-preview">
+                      <picture>
+                        <source srcset="img/content/user-avatar.webp" type="image/webp"><img src="img/content/user-avatar.png" width="170" height="170" alt="User avatar">
+                      </picture>
+                    </div>
+                    <div class="edit-profile__upload-wrap">
+                      <input class="edit-profile__upload-field" type="file" id="avatar" name="avatar">
+                      <label class="edit-profile__upload-dropzone" for="avatar"></label>
+                    </div>
+                  </div>
+                  <ul class="edit-profile__field-list">
+                    <li class="edit-profile__field-item">
+                      <label class="edit-profile__title" for="name">Your Name</label>
+                      <input class="edit-profile__field" id="name" type="text" name="name" placeholder="Charlene Reed">
+                    </li>
+                    <li class="edit-profile__field-item">
+                      <label class="edit-profile__title" for="user-name">User Name</label>
+                      <input class="edit-profile__field" id="user-name" type="text" name="user-name" placeholder="Charlene Reed">
+                    </li>
+                    <li class="edit-profile__field-item">
+                      <label class="edit-profile__title" for="email">Email</label>
+                      <input class="edit-profile__field" id="email" type="email" name="email" placeholder="charlenereed@gmail.com">
+                    </li>
+                    <li class="edit-profile__field-item">
+                      <label class="edit-profile__title" for="password">Password</label>
+                      <input class="edit-profile__field" id="password" type="password" name="password" placeholder="**********">
+                    </li>
+                    <li class="edit-profile__field-item">
+                      <label class="edit-profile__title" for="present-address">Present Address</label>
+                      <input class="edit-profile__field" id="present-address" type="text" name="present-address" placeholder="San Jose, California, USA">
+                    </li>
+                    <li class="edit-profile__field-item">
+                      <label class="edit-profile__title" for="permanent-address">Permanent Address</label>
+                      <input class="edit-profile__field" id="permanent-address" type="text" name="permanent-address" placeholder="San Jose, California, USA">
+                    </li>
+                    <li class="edit-profile__field-item">
+                      <label class="edit-profile__title" for="city">City</label>
+                      <input class="edit-profile__field" id="city" type="text" name="city" placeholder="San Jose">
+                    </li>
+                    <li class="edit-profile__field-item">
+                      <label class="edit-profile__title" for="country">Country</label>
+                      <input class="edit-profile__field" id="country" type="text" name="country" placeholder="USA">
+                    </li>
+                  </ul>
+                  <button class="edit-profile__submit" type="submit">Save</button>
+                </form>
+              </li>
+              <li class="tabs__content-item" id="tab-2">content-2</li>
+              <li class="tabs__content-item" id="tab-3">content-3</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="footer"></footer>
     <script src="js/bundle.min.js"></script>
   </body>
 </html>

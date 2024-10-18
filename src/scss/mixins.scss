@@ -22,6 +22,12 @@ $desktop: 1440px;
 	}
 }
 
+@mixin active {
+	&:active {
+		@content;
+	}
+}
+
 @mixin tablet {
 	@media (min-width: $tablet) {
 		@content;

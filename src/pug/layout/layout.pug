@@ -23,9 +23,11 @@ html(class="page" lang="ru")
 		include ../mixins/mixins
 		block header
 			include ../includes/header
+		block sidebar
+			include ../includes/sidebar
 		main(class="main")
 			block content
-		block footer
-			include ../includes/footer
+		//- block footer
+		//- 	include ../includes/footer
 		block page-bottom
 			script(src="js/bundle.min.js")
