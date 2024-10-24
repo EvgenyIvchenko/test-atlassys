@@ -66,6 +66,7 @@ textarea {
 button,
 input {
   overflow: visible;
+  outline: none;
 }
 
 button,
@@ -487,6 +488,7 @@ input[type=radio].visually-hidden {
   position: absolute;
   display: grid;
   place-items: center;
+  border: 1px solid transparent;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   padding-right: 10px;
@@ -520,10 +522,10 @@ input[type=radio].visually-hidden {
 }
 
 .header__search {
-  border: none;
+  outline: none;
   border: 1px solid transparent;
   border-radius: 40px;
-  padding: 12px 12px 12px 46px;
+  padding: 11px 12px 11px 50px;
   width: 100%;
   font-size: 13px;
   line-height: 16px;
@@ -991,7 +993,7 @@ input[type=radio].visually-hidden {
   border-radius: 50%;
   width: 38px;
   height: 38px;
-  background-image: url("../../img/static/edit-avatar.svg");
+  background-image: url("../img/static/edit-avatar.svg");
   background-position: center;
   background-size: 18px 18px;
   background-repeat: no-repeat;
