@@ -42,12 +42,7 @@
               <svg width="26" height="26" aria-hidden="true">
                 <use xlink:href="img/sprite.svg#menu-notifications"></use>
               </svg>
-        </button>
-        <div class="header__user-avatar">
-          <picture>
-            <source srcset="img/content/user-avatar.webp" type="image/webp"><img src="img/content/user-avatar.png" width="35" height="35" alt="User avatar">
-          </picture>
-        </div>
+        </button><a class="header__user-avatar" href="#"></a>
       </div>
     </header>
     <aside class="sidebar">
@@ -111,13 +106,9 @@
               <li class="tabs__content-item tabs__content-item--visible" id="tab-1">
                 <form class="tabs__edit-profile edit-profile" action="#" method="post" enctype="multipart/formdata" autocomplete="off">
                   <div class="edit-profile__avatar-wrap">
-                    <div class="edit-profile__avatar-preview">
-                      <picture>
-                        <source srcset="img/content/user-avatar.webp" type="image/webp"><img src="img/content/user-avatar.png" width="170" height="170" alt="User avatar">
-                      </picture>
-                    </div>
+                    <div class="edit-profile__avatar-preview"></div>
                     <div class="edit-profile__upload-wrap">
-                      <input class="edit-profile__upload-field" type="file" id="avatar" name="avatar">
+                      <input class="edit-profile__upload-field" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
                       <label class="edit-profile__upload-dropzone" for="avatar"></label>
                     </div>
                   </div>

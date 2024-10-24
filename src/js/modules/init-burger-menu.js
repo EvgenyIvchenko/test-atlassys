@@ -1,18 +1,32 @@
 const menuOpenElement = document.querySelector('.header__burger');
-const navigation = document.querySelector('.sidebar');
+const sidebarElement = document.querySelector('.sidebar');
+const navigationElements = document.querySelectorAll('.navigation__item');
 
-const onMenuOpenClick = (e) => {
+const onBurgerClick = (e) => {
 	e.preventDefault();
 
 	if (menuOpenElement.getAttribute('aria-expanded') === 'false') {
 		menuOpenElement.setAttribute('aria-expanded', 'true');
-		navigation.classList.add('sidebar--opened');
+		sidebarElement.classList.add('sidebar--opened');
 	} else {
 		menuOpenElement.setAttribute('aria-expanded', 'false');
-		navigation.classList.remove('sidebar--opened');
+		sidebarElement.classList.remove('sidebar--opened');
 	}
 };
 
+const onPageClick = () => {
+	navigationElements.forEach((element) => {
+		element.addEventListener('click', () => {
+			navigationElements.forEach((item) => {
+				item.classList.remove('navigation__item--current');
+			});
+
+			element.classList.add('navigation__item--current');
+		});
+	});
+};
+
 export const initMenu = () => {
-	menuOpenElement.addEventListener('click', onMenuOpenClick);
+	menuOpenElement.addEventListener('click', onBurgerClick);
+	onPageClick();
 };

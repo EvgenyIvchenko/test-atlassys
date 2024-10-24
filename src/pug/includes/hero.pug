@@ -13,11 +13,8 @@ section.hero
 					form.tabs__edit-profile.edit-profile(action="#" method="post" enctype="multipart/formdata" autocomplete="off")
 						div.edit-profile__avatar-wrap
 							div.edit-profile__avatar-preview
-								picture
-									source(srcset="img/content/user-avatar.webp" type="image/webp")
-									img(src="img/content/user-avatar.png" width="170" height="170" alt="User avatar")
 							div.edit-profile__upload-wrap
-								input.edit-profile__upload-field(type="file" id="avatar" name="avatar")
+								input.edit-profile__upload-field(type="file" id="avatar" name="avatar" accept="image/png, image/jpeg")
 								label.edit-profile__upload-dropzone(for="avatar")
 						ul.edit-profile__field-list
 							li.edit-profile__field-item

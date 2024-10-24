@@ -194,6 +194,8 @@ template {
   --color-text-current: #1814f3;
   --color-bg-main: #fff;
   --color-bg-alternate: #f5f7fa;
+  --color-bg-alternate-hover: #e4eaf2;
+  --color-bg-alternate-active: #d3dce9;
   --color-heading-main: #343c6a;
   --color-notifications-icon: #fe5c73;
   --color-aside-border: #e6eff5;
@@ -351,12 +353,16 @@ input[type=radio].visually-hidden {
 }
 
 .header {
+  position: fixed;
+  z-index: 2;
   display: grid;
   place-items: center;
+  width: 100%;
   background-color: var(--color-bg-main);
 }
 @media (min-width: 1440px) {
   .header {
+    position: static;
     display: flex;
     grid-area: header;
   }
@@ -487,6 +493,7 @@ input[type=radio].visually-hidden {
   padding-left: 20px;
   height: 100%;
   background-color: transparent;
+  transition: all 0.3s ease-in-out;
 }
 .header__search-submit svg {
   width: 16px;
@@ -503,17 +510,25 @@ input[type=radio].visually-hidden {
     height: 20px;
   }
 }
+@media (hover: hover) {
+  .header__search-submit:hover, .header__search-submit:focus {
+    background-color: var(--color-bg-alternate-hover);
+  }
+}
+.header__search-submit:active {
+  background-color: var(--color-bg-alternate-active);
+}
 
 .header__search {
   border: none;
+  border: 1px solid transparent;
   border-radius: 40px;
-  padding-right: 12px;
-  padding-left: 46px;
+  padding: 12px 12px 12px 46px;
   width: 100%;
-  height: 40px;
   font-size: 13px;
   line-height: 16px;
   background-color: var(--color-bg-alternate);
+  transition: all 0.3s ease-in-out;
 }
 .header__search::-moz-placeholder {
   font-size: 13px;
@@ -528,9 +543,9 @@ input[type=radio].visually-hidden {
 @media (min-width: 1440px) {
   .header__search {
     padding-left: 60px;
-    min-height: 50px;
     font-size: 15px;
     line-height: 18px;
+    padding-block: 16px;
   }
   .header__search::-moz-placeholder {
     font-size: 15px;
@@ -540,6 +555,14 @@ input[type=radio].visually-hidden {
     font-size: 15px;
     line-height: 18px;
   }
+}
+@media (hover: hover) {
+  .header__search:hover, .header__search:focus {
+    border: 1px solid var(--color-text-sidebar);
+  }
+}
+.header__search:active {
+  border: 1px solid var(--color-text-main);
 }
 
 .header__settings {
@@ -552,14 +575,24 @@ input[type=radio].visually-hidden {
     border-radius: 50%;
     padding: 12px;
     background-color: var(--color-bg-alternate);
+    transition: all 0.3s ease-in-out;
   }
   .header__settings svg {
     fill: var(--color-text-alternate);
   }
 }
+@media (hover: hover) {
+  .header__settings:hover, .header__settings:focus {
+    background-color: var(--color-bg-alternate-hover);
+  }
+}
+.header__settings:active {
+  background-color: var(--color-bg-alternate-active);
+}
 
 .header__notifications {
   display: none;
+  transition: all 0.3s ease-in-out;
 }
 @media (min-width: 1440px) {
   .header__notifications {
@@ -574,6 +607,14 @@ input[type=radio].visually-hidden {
     fill: var(--color-notifications-icon);
   }
 }
+@media (hover: hover) {
+  .header__notifications:hover, .header__notifications:focus {
+    background-color: var(--color-bg-alternate-hover);
+  }
+}
+.header__notifications:active {
+  background-color: var(--color-bg-alternate-active);
+}
 
 .header__user-avatar {
   -ms-grid-row: 1;
@@ -582,9 +623,10 @@ input[type=radio].visually-hidden {
   grid-area: c;
   width: 35px;
   height: 35px;
-}
-.header__user-avatar img {
-  width: 100%;
+  background-image: url("../img/static/user-avatar.webp");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 @media (min-width: 1440px) {
   .header__user-avatar {
@@ -594,14 +636,13 @@ input[type=radio].visually-hidden {
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 140px;
-  bottom: 0;
-  z-index: 10;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: calc(100dvh - 140px);
   background-color: var(--color-bg-main);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -615,7 +656,7 @@ input[type=radio].visually-hidden {
   .sidebar {
     position: static;
     grid-area: sidebar;
-    border: 1px solid var(--color-aside-border);
+    border-right: 1px solid var(--color-aside-border);
     width: auto;
     height: auto;
     opacity: 1;
@@ -632,6 +673,13 @@ input[type=radio].visually-hidden {
   display: flex;
   flex-direction: column;
   place-items: center;
+  overflow: scroll;
+  overscroll-behavior: contain;
+}
+@media (min-width: 1440px) {
+  .navigation {
+    overflow: auto;
+  }
 }
 
 .navigation__logo {
@@ -658,17 +706,31 @@ input[type=radio].visually-hidden {
   width: 100%;
 }
 
+.navigation__link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 44px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-text-sidebar);
+  transition: all 0.3s ease-in-out;
+  gap: 26px;
+  padding-block: 20px;
+}
+.navigation__link svg {
+  fill: var(--color-text-sidebar);
+  transition: all 0.3s ease-in-out;
+}
+
 .navigation__item {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-}
-@media (hover: hover) {
-  .navigation__item:not([data-current=yes]):hover, .navigation__item:not([data-current=yes]):focus {
-    background-color: var(--color-bg-alternate);
-  }
+  transition: all 0.3s ease-in-out;
 }
 .navigation__item--current {
   pointer-events: none;
@@ -688,26 +750,21 @@ input[type=radio].visually-hidden {
 .navigation__item--current .navigation__link svg {
   fill: var(--color-text-current);
 }
-
-.navigation__link {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 44px;
-  width: 100%;
-  font-weight: 500;
-  font-size: 18px;
-  color: var(--color-text-sidebar);
-  gap: 26px;
-  padding-block: 20px;
+@media (hover: hover) {
+  .navigation__item:hover, .navigation__item:focus {
+    background-color: var(--color-bg-alternate);
+  }
 }
-.navigation__link svg {
-  fill: var(--color-text-sidebar);
+.navigation__item:active a {
+  color: var(--color-text-current);
+}
+.navigation__item:active svg {
+  fill: var(--color-text-current);
 }
 
 .main {
   flex: 1 0 auto;
-  padding: 25px;
+  padding: 165px 25px 25px;
   background-color: var(--color-bg-alternate);
 }
 @media (min-width: 1440px) {
@@ -896,10 +953,17 @@ input[type=radio].visually-hidden {
   display: flex;
   place-items: center;
   border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  background-image: url("../img/static/user-avatar.webp");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
   .edit-profile__avatar-preview {
-    max-width: 130px;
+    width: 130px;
+    height: 130px;
   }
 }
 
