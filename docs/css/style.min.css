@@ -544,7 +544,7 @@ input[type=radio].visually-hidden {
 }
 @media (min-width: 1440px) {
   .header__search {
-    padding-left: 60px;
+    padding-left: 64px;
     font-size: 15px;
     line-height: 18px;
     padding-block: 16px;
