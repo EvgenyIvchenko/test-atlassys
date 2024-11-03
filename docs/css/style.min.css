@@ -317,7 +317,7 @@ dl {
   background-color: var(--color-bg-main);
   overscroll-behavior: none;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .page__body {
     display: grid;
     grid-template-areas: "sidebar header" "sidebar main";
@@ -347,7 +347,7 @@ input[type=radio].visually-hidden {
   width: 100%;
   padding-inline: 20px;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .container {
     padding-inline: 30px;
   }
@@ -361,7 +361,7 @@ input[type=radio].visually-hidden {
   width: 100%;
   background-color: var(--color-bg-main);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header {
     position: static;
     display: flex;
@@ -377,7 +377,7 @@ input[type=radio].visually-hidden {
   padding-top: 25px;
   row-gap: 20px;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header__container {
     display: flex;
     -moz-column-gap: 30px;
@@ -435,7 +435,7 @@ input[type=radio].visually-hidden {
 .header__burger[aria-expanded=true] span:nth-child(3) {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header__burger {
     display: none;
   }
@@ -451,7 +451,7 @@ input[type=radio].visually-hidden {
   line-height: 24px;
   color: var(--color-heading-main);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header__heading {
     margin-right: auto;
     font-size: 28px;
@@ -469,7 +469,7 @@ input[type=radio].visually-hidden {
   margin-bottom: 20px;
   width: 100%;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header__search-wrap {
     margin-bottom: 0;
     width: auto;
@@ -502,7 +502,7 @@ input[type=radio].visually-hidden {
   height: 16px;
   fill: var(--color-text-alternate);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header__search-submit {
     padding-right: 15px;
     padding-left: 25px;
@@ -542,7 +542,7 @@ input[type=radio].visually-hidden {
   line-height: 16px;
   color: var(--color-text-placeholder);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header__search {
     padding-left: 64px;
     font-size: 15px;
@@ -570,7 +570,7 @@ input[type=radio].visually-hidden {
 .header__settings {
   display: none;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header__settings {
     display: grid;
     place-items: center;
@@ -596,7 +596,7 @@ input[type=radio].visually-hidden {
   display: none;
   transition: all 0.3s ease-in-out;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header__notifications {
     display: grid;
     place-items: center;
@@ -630,7 +630,7 @@ input[type=radio].visually-hidden {
   background-size: contain;
   background-repeat: no-repeat;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header__user-avatar {
     width: 60px;
     height: 60px;
@@ -654,7 +654,7 @@ input[type=radio].visually-hidden {
   opacity: 1;
   pointer-events: visible;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .sidebar {
     position: static;
     grid-area: sidebar;
@@ -678,7 +678,7 @@ input[type=radio].visually-hidden {
   overflow: scroll;
   overscroll-behavior: contain;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .navigation {
     overflow: auto;
   }
@@ -695,7 +695,7 @@ input[type=radio].visually-hidden {
   width: 183px;
   height: 36px;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .navigation__logo {
     justify-content: center;
   }
@@ -769,13 +769,13 @@ input[type=radio].visually-hidden {
   padding: 165px 25px 25px;
   background-color: var(--color-bg-alternate);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .main {
     grid-area: main;
     padding: 30px 40px 0;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .header {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
@@ -797,7 +797,7 @@ input[type=radio].visually-hidden {
   border-radius: 15px;
   background-color: var(--color-bg-main);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .hero {
     border-radius: 25px;
   }
@@ -809,7 +809,7 @@ input[type=radio].visually-hidden {
   padding-top: 20px;
   padding-bottom: 26px;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .hero__container {
     padding-top: 30px;
     padding-bottom: 38px;
@@ -839,7 +839,7 @@ input[type=radio].visually-hidden {
   height: 1px;
   background-color: var(--color-aside-border);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .tabs__title-list {
     justify-content: flex-start;
     margin-bottom: 55px;
@@ -891,7 +891,7 @@ input[type=radio].visually-hidden {
 .tabs__title-item:active h2 {
   color: var(--color-text-current);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .tabs__title-item {
     padding: 8px 15px 10px;
   }
@@ -906,7 +906,7 @@ input[type=radio].visually-hidden {
   font-size: 13px;
   color: var(--color-text-alternate);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .tabs__title-heading {
     font-size: 16px;
   }
@@ -979,7 +979,7 @@ input[type=radio].visually-hidden {
   width: 38px;
   height: 38px;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .edit-profile__upload-wrap {
     bottom: 16px;
     width: 30px;
@@ -1001,7 +1001,7 @@ input[type=radio].visually-hidden {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .edit-profile__upload-dropzone {
     bottom: 16px;
     width: 30px;
@@ -1032,7 +1032,7 @@ input[type=radio].visually-hidden {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .edit-profile__field-list {
     margin-bottom: 30px;
     row-gap: 22px;
@@ -1047,13 +1047,13 @@ input[type=radio].visually-hidden {
   width: 100%;
   row-gap: 9px;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .edit-profile__field-item {
     row-gap: 11px;
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .edit-profile__title {
     font-size: 16px;
   }
@@ -1079,7 +1079,7 @@ input[type=radio].visually-hidden {
   line-height: 15px;
   color: var(--color-text-alternate);
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .edit-profile__field {
     padding: 16px 20px;
     font-size: 15px;
@@ -1123,7 +1123,7 @@ input[type=radio].visually-hidden {
     max-width: 190px;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .edit-profile__submit {
     border-radius: 15px;
     font-size: 18px;
